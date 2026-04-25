@@ -72,8 +72,8 @@ with st.expander("Informasi Dataset & Tujuan Analisis"):
         **Tujuan Analisis:**  
         Dashboard ini bertujuan untuk menjawab 3 pertanyaan bisnis:
         1. Bagaimana performa total pesanan dan pendapatan (revenue) perusahaan dalam beberapa bulan terakhir (2017 - 2018)?
-        2. Kategori produk apa yang memiliki volume penjualan tertinggi dan kategori apa     yang menyumbang pendapatan (revenue) terbesar bagi perusahaan?
-        3. Negara bagian (state) mana yang memiliki pelanggan terbanyak dan bagaimana persebaran pengeluarannya?
+        2. Bagaimana perbandingan performa antar berbagai kategori produk jika dilihat dari sisi volume pesanan dan total pendapatan yang dihasilkan selama tahun 2016 - 2018?
+        3. Bagaimana distribusi geografis customer serta kontribusi total pengeluarannya di berbagai negara bagian Brasil sepanjang tahun 2016 - 2018?
         """
     )
 
@@ -134,7 +134,7 @@ with tab2:
             top_orders["order_count"], 
             color="#82bd92")
             
-    ax.set_title("Top 5 Product Categories by Sales Volume", fontsize=18)
+    ax.set_title("Top 15 Product Categories by Sales Volume", fontsize=18)
     ax.set_xlabel("Order Count", fontsize=12)
     ax.set_ylabel("Product Category", fontsize=12)
     ax.grid(True)
@@ -148,7 +148,7 @@ with tab2:
             top_revenue["revenue"   ], 
             color="#bfad84")
 
-    ax.set_title("Top 5 Product Categories by Revenue", fontsize=18)
+    ax.set_title("Top 15 Product Categories by Revenue", fontsize=18)
     ax.set_xlabel("Revenue", fontsize=12)
     ax.set_ylabel("Product Category", fontsize=12)
     ax.grid(True)
@@ -158,14 +158,14 @@ with tab2:
 with tab3:
     st.header("Distribusi Geografis Pelanggan")
 
-    fig, ax = plt.subplots(figsize=(12, 6))
-    top_states = state_performance_df.head(10).sort_values(by="customer_count", ascending=True)
+    fig, ax = plt.subplots(figsize=(12, 12))
+    top_states = state_performance_df.sort_values(by="customer_count", ascending=True)
 
     ax.barh(top_states["customer_state"], 
             top_states["customer_count"], 
             color="#e8aeb0")
 
-    ax.set_title("Top 10 States by Number of Customers", fontsize=18)
+    ax.set_title("States by Number of Customers", fontsize=18)
     ax.set_xlabel("Customer Count", fontsize=12)
     ax.set_ylabel("Customer State", fontsize=12)
     ax.grid(True)
