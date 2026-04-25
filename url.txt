@@ -1,0 +1,2 @@
+github: https://github.com/akmalhen/brazilian-ecommerce-analysis
+streamlit: https://brazilian-ecommerce-analysis-dmklru2vxgtu8rht26hjku.streamlit.app/
