@@ -22,25 +22,13 @@ To run the dashboard locally, follow these steps:
 git clone https://github.com/akmalhen/brazilian-ecommerce-analysis.git
 cd brazilian-ecommerce-analysis
 ```
-### 2. Create a Virtual Environment
-It is recommended to use an isolated environment to avoid dependency conflicts:
-```bash
-# For Mac/Linux
-python3 -m venv dicoding
-source dicoding/bin/activate
-
-# For Windows
-python -m venv dicoding
-dicoding\Scripts\activate
-```
-
-### 3. Install Dependencies
+### 2. Install Dependencies
 Install all required libraries using pip:
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Run the Streamlit Dashboard
+### 3. Run the Streamlit Dashboard
 ```bash
 streamlit run dashboard/dashboard.py
 ```
